@@ -19,7 +19,7 @@ const LAYOUT: Cell[] = [
   { slug: "baseball", span: "" },
   { slug: "ice-hockey", span: "" },
   { slug: "track-suit", span: "" },
-  { slug: "hoodie", span: "" },
+  { slug: "hoodies", span: "" },
   { slug: "duffel", span: "" },
   { slug: "karate", span: "" },
 ];
@@ -31,7 +31,7 @@ const CARD_IMAGES: Record<string, string> = {
   baseball: "/images/cards/baseball.webp",
   "ice-hockey": "/images/cards/ice-hockey.webp",
   "track-suit": "/images/cards/track-suit.webp",
-  hoodie: "/images/cards/hoodie.webp",
+  hoodies: "/images/cards/hoodie.webp",
   duffel: "/images/cards/duffel.webp",
   karate: "/images/cards/karate.webp",
 };

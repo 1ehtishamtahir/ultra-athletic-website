@@ -1,86 +1,89 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import {
-  AnimatePresence,
-  motion,
-  useReducedMotion,
-} from "framer-motion";
-import { ArrowRight, ArrowUpRight, X } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { ArrowRight, ArrowUpRight, X, SlidersHorizontal } from "lucide-react";
 import { PRODUCTS, type Product } from "@/lib/data";
 import { RevealStagger, RevealItem } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 
-const SPAN: Record<string, string> = {
-  "aero-match-jersey": "md:col-span-2 md:row-span-2",
-  "command-cricket-uniform": "md:col-span-2",
-  "payload-duffel": "md:col-span-2",
-  "tundra-training-top": "md:col-span-2",
-};
+const CATEGORIES = ["All", ...Array.from(new Set(PRODUCTS.map((p) => p.category)))];
 
-const FEATURED_IDS = [
-  "aero-match-jersey",
-  "command-cricket-uniform",
-  "velocity-track-suit",
-  "apex-tech-hoodie",
-  "payload-duffel",
-  "tundra-training-top",
-  "courtside-jersey",
-  "karate-master-gi",
-];
-
-export function FeaturedProducts() {
+export default function ShopPage() {
+  const [activeCategory, setActiveCategory] = useState("All");
   const [activeId, setActiveId] = useState<string | null>(null);
   const reduced = useReducedMotion();
 
-  const featured = PRODUCTS.filter((p) => FEATURED_IDS.includes(p.id));
+  const filtered =
+    activeCategory === "All"
+      ? PRODUCTS
+      : PRODUCTS.filter((p) => p.category === activeCategory);
+
   const active = PRODUCTS.find((p) => p.id === activeId) ?? null;
 
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setActiveId(null);
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
-
-  useEffect(() => {
-    document.body.style.overflow = active ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [active]);
-
   return (
-    <section className="relative bg-ink-950 py-24 md:py-36">
+    <main className="min-h-screen bg-ink-950 pt-32 pb-24">
       <div className="mx-auto max-w-[1440px] px-6 md:px-10">
-        <RevealStagger className="mb-14 flex flex-col gap-5 md:mb-20 md:flex-row md:items-end md:justify-between">
+        {/* Header */}
+        <RevealStagger className="mb-14 md:mb-20">
           <RevealItem>
             <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#5a8a00]">
-              Featured Products
+              Shop
             </p>
-            <h2 className="font-heading text-[clamp(2rem,4vw,3.5rem)] font-semibold uppercase leading-tight tracking-tight text-ink-100">
-              Gear That Earns
+            <h1 className="font-heading text-[clamp(2rem,5vw,4.5rem)] font-semibold uppercase leading-[1.05] tracking-tight text-ink-100">
+              Every Product.
               <br />
-              <span className="text-mist-500">Its Place In The Bag.</span>
-            </h2>
-          </RevealItem>
-          <RevealItem>
-            <Button href="/shop" variant="ghost" size="md">
-              View the full shop
-              <ArrowRight className="size-4" />
-            </Button>
+              <span className="text-mist-500">Every Sport. One Place.</span>
+            </h1>
           </RevealItem>
         </RevealStagger>
 
+        {/* Category Filter */}
+        <RevealStagger className="mb-10 flex flex-wrap gap-3">
+          <RevealItem>
+            <div className="flex items-center gap-2 rounded-full border border-[#2a2a30] bg-[#131316] px-4 py-2">
+              <SlidersHorizontal className="size-4 text-mist-500" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-mist-500">
+                Filter
+              </span>
+            </div>
+          </RevealItem>
+          {CATEGORIES.map((cat) => (
+            <RevealItem key={cat}>
+              <button
+                onClick={() => setActiveCategory(cat)}
+                className={`rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] transition-all duration-300 ${
+                  activeCategory === cat
+                    ? "border-volt bg-volt/15 text-volt"
+                    : "border-[#2a2a30] bg-[#131316] text-mist-400 hover:border-[#3a3a40]"
+                }`}
+              >
+                {cat}
+              </button>
+            </RevealItem>
+          ))}
+        </RevealStagger>
+
+        {/* Product Count */}
+        <p className="mb-8 text-sm text-mist-500">
+          Showing {filtered.length} product{filtered.length !== 1 && "s"}
+          {activeCategory !== "All" && (
+            <span>
+              {" "}
+              in <span className="text-volt">{activeCategory}</span>
+            </span>
+          )}
+        </p>
+
+        {/* Product Grid */}
         <RevealStagger
-          stagger={0.08}
-          className="grid grid-cols-1 gap-4 md:grid-cols-4 md:auto-rows-[240px]"
+          stagger={0.05}
+          className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         >
-          {featured.map((product) => (
-            <RevealItem key={product.id} className={SPAN[product.id] ?? ""}>
-              <QuickViewCard
+          {filtered.map((product) => (
+            <RevealItem key={product.id}>
+              <ProductCard
                 product={product}
                 onOpen={() => setActiveId(product.id)}
                 reduced={!!reduced}
@@ -88,18 +91,25 @@ export function FeaturedProducts() {
             </RevealItem>
           ))}
         </RevealStagger>
+
+        {filtered.length === 0 && (
+          <div className="py-32 text-center">
+            <p className="text-lg text-mist-500">No products found in this category.</p>
+          </div>
+        )}
       </div>
 
+      {/* Quick View Modal */}
       <AnimatePresence>
         {active && (
           <QuickViewModal product={active} onClose={() => setActiveId(null)} />
         )}
       </AnimatePresence>
-    </section>
+    </main>
   );
 }
 
-function QuickViewCard({
+function ProductCard({
   product,
   onOpen,
   reduced,
@@ -109,61 +119,56 @@ function QuickViewCard({
   reduced: boolean;
 }) {
   return (
-    <div className="h-full">
-      <motion.div
-        layoutId={`qv-${product.id}`}
-        className="h-full"
+    <div className="group cursor-pointer rounded-3xl border border-[#2a2a30] bg-[#131316] transition-colors duration-500 hover:border-[#2a2a30]/60">
+      <button
+        onClick={onOpen}
+        className="relative block w-full overflow-hidden rounded-3xl text-left"
+        aria-label={`Quick view ${product.name}`}
       >
-        <div
-          className="group h-full cursor-pointer rounded-3xl border border-[#2a2a30] bg-[#131316] transition-colors duration-500 hover:border-[#2a2a30]/60"
-        >
-          <button
-            onClick={onOpen}
-            className="relative block h-full w-full overflow-hidden rounded-3xl text-left"
-            aria-label={`Quick view ${product.name}`}
-          >
-            <Image
-              src={product.image}
-              alt={product.name}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0b]/90 via-[#0a0a0b]/10 to-transparent" />
-
-            <div className="relative z-10 flex h-full flex-col justify-end p-6">
-              <div className="flex items-center gap-2">
-                {product.tag && (
-                  <span className="rounded-full bg-volt/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-volt">
-                    {product.tag}
-                  </span>
-                )}
-                <span className="rounded-full border border-[#2a2a30] bg-[#0a0a0b]/60 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-mist-400 backdrop-blur">
-                  {product.category}
-                </span>
-              </div>
-              <div className="mt-3 flex items-end justify-between gap-4">
-                <div>
-                  <h3 className="font-heading text-xl font-bold tracking-tight text-white md:text-2xl">
-                    {product.name}
-                  </h3>
-                  <p className="mt-1 text-xs uppercase tracking-[0.18em] text-mist-500">
-                    {product.sport} · From ${product.price}
-                  </p>
-                </div>
-                <span className="grid size-10 shrink-0 place-items-center rounded-full border border-white/15 bg-white/5 opacity-0 backdrop-blur transition-all duration-500 group-hover:translate-x-1 group-hover:opacity-100">
-                  <ArrowUpRight className="size-4" />
-                </span>
-              </div>
-              {!reduced && (
-                <p className="mt-2 max-w-md text-xs leading-relaxed text-mist-400 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                  {product.description}
-                </p>
-              )}
-            </div>
-          </button>
+        <div className="relative aspect-[4/3]">
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0b]/90 via-[#0a0a0b]/10 to-transparent" />
         </div>
-      </motion.div>
+
+        <div className="relative z-10 p-5">
+          <div className="mb-2 flex items-center gap-2">
+            {product.tag && (
+              <span className="rounded-full bg-volt/15 px-2.5 py-0.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-volt">
+                {product.tag}
+              </span>
+            )}
+            <span className="rounded-full border border-[#2a2a30] bg-[#0a0a0b]/60 px-2.5 py-0.5 text-[9px] font-medium uppercase tracking-[0.16em] text-mist-400 backdrop-blur">
+              {product.category}
+            </span>
+          </div>
+
+          <div className="flex items-end justify-between gap-3">
+            <div>
+              <h3 className="font-heading text-lg font-bold tracking-tight text-white">
+                {product.name}
+              </h3>
+              <p className="mt-0.5 text-[11px] uppercase tracking-[0.18em] text-mist-500">
+                {product.sport} · From ${product.price}
+              </p>
+            </div>
+            <span className="grid size-8 shrink-0 place-items-center rounded-full border border-white/15 bg-white/5 opacity-0 backdrop-blur transition-all duration-500 group-hover:translate-x-1 group-hover:opacity-100">
+              <ArrowUpRight className="size-3.5" />
+            </span>
+          </div>
+
+          {!reduced && (
+            <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-mist-400 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              {product.description}
+            </p>
+          )}
+        </div>
+      </button>
     </div>
   );
 }
