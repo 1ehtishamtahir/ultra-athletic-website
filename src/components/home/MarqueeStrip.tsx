@@ -16,7 +16,7 @@ export function MarqueeStrip() {
   const items = [...SPORTS, ...WORDS];
 
   return (
-    <section className="relative border-y border-[#e0e0e0] bg-[#f5f5f5] py-6" aria-label="Sports and capabilities">
+    <section className="relative border-y border-[rgb(227_6_19_/_0.16)] bg-[rgb(227_6_19_/_0.035)] py-6" aria-label="Sports and capabilities">
       <Marquee slow>
         {items.map((item, i) => (
           <span key={i} className="flex items-center">
@@ -26,8 +26,7 @@ export function MarqueeStrip() {
             <span
               className="mx-8 size-1.5 rounded-full"
               style={{
-                backgroundColor:
-                  typeof item === "string" ? "#C6FF3D" : item.color,
+                backgroundColor: "rgb(227 6 19 / 0.42)",
               }}
             />
           </span>

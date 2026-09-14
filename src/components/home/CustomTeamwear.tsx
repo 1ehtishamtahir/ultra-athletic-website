@@ -133,7 +133,7 @@ export function CustomTeamwear() {
             key={i}
             d={d}
             fill="none"
-            stroke={i % 2 === 0 ? "#C6FF3D" : "#3DD9FF"}
+            stroke={i % 2 === 0 ? "#E30613" : "#FF5A63"}
             strokeOpacity="0.12"
             strokeWidth="1.5"
             strokeDasharray="10 14"
@@ -147,7 +147,7 @@ export function CustomTeamwear() {
 
       <div className="relative z-10 mx-auto grid max-w-[1440px] items-center gap-14 px-6 md:px-10 lg:grid-cols-2">
         <Reveal>
-          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#5a8a00]">
+          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-volt">
             Custom Teamwear
           </p>
           <h2 className="font-heading text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-tight tracking-tight text-white">
@@ -192,7 +192,7 @@ export function CustomTeamwear() {
                       <Check
                         className={cn(
                           "size-3.5",
-                          c.name === "Pitch Black" ? "text-ink-100" : "text-ink-950"
+                          c.name === "Team Black" ? "text-ink-100" : "text-ink-950"
                         )}
                       />
                     </motion.span>
@@ -207,7 +207,7 @@ export function CustomTeamwear() {
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
-              {["#FFFFFF", "#0A0A0B", "#C6FF3D", "#FF4D2E"].map((hex) => (
+              {["#FFFFFF", "#0A0A0B", "#E30613", "#8F1018"].map((hex) => (
                 <button
                   key={hex}
                   onClick={() => setTrim(hex)}

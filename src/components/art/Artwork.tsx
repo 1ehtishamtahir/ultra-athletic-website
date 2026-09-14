@@ -167,7 +167,7 @@ type ArtworkProps = {
 
 export function Artwork({
   variant,
-  color = "#c6ff3d",
+  color = "#e30613",
   className,
   style,
   glyphClassName,

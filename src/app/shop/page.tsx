@@ -28,7 +28,7 @@ export default function ShopPage() {
         {/* Header */}
         <RevealStagger className="mb-14 md:mb-20">
           <RevealItem>
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#5a8a00]">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-volt">
               Shop
             </p>
             <h1 className="font-heading text-[clamp(2rem,5vw,4.5rem)] font-semibold uppercase leading-[1.05] tracking-tight text-ink-100">

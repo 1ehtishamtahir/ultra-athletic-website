@@ -62,10 +62,10 @@ type ButtonProps = {
 
 const VARIANTS: Record<string, string> = {
   primary:
-    "border border-volt/30 bg-volt/15 text-volt backdrop-blur-xl shadow-[0_0_24px_rgba(198,255,61,0.08)] hover:bg-volt/25 hover:border-volt/50 hover:shadow-[0_0_40px_rgba(198,255,61,0.22)]",
+    "border border-volt/30 bg-volt/15 text-volt backdrop-blur-xl shadow-[0_0_24px_rgba(227,6,19,0.12)] hover:bg-volt/25 hover:border-volt/50 hover:shadow-[0_0_40px_rgba(227,6,19,0.28)]",
   gradient: "gradient-ring bg-ink-900/60 text-white backdrop-blur-sm",
   ghost: "hairline bg-ink-950/40 text-ink-100 hover:bg-ink-800",
-  frost: "border border-frost/30 bg-frost/15 text-frost backdrop-blur-xl shadow-[0_0_24px_rgba(61,217,255,0.08)] hover:bg-frost/25 hover:border-frost/50 hover:shadow-[0_0_40px_rgba(61,217,255,0.22)]",
+  frost: "border border-frost/30 bg-frost/15 text-frost backdrop-blur-xl shadow-[0_0_24px_rgba(255,90,99,0.1)] hover:bg-frost/25 hover:border-frost/50 hover:shadow-[0_0_40px_rgba(255,90,99,0.25)]",
 };
 
 const SIZES: Record<string, string> = {

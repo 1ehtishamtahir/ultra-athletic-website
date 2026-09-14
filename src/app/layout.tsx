@@ -1,31 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Archivo } from "next/font/google";
 import "./globals.css";
 import { ScrollProvider } from "@/components/ScrollProvider";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Footer } from "@/components/layout/Footer";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const archivo = Archivo({
-  variable: "--font-archivo",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "700", "900"],
-});
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ultraathletics.com"),
+  metadataBase: new URL("https://gearifypro.com"),
   title: {
-    default: "UltraAthletics — Custom Sportswear Built to Perform",
-    template: "%s — UltraAthletics",
+    default: "Gearify Pro — Custom Sportswear Built to Perform",
+    template: "%s — Gearify Pro",
   },
   description:
-    "UltraAthletics is a performance sportswear studio building custom team uniforms, jerseys, and athletic apparel for teams that play to win. Built to perform. Designed for your team.",
+    "Gearify Pro is a performance sportswear studio building custom team uniforms, jerseys, and athletic apparel for teams that play to win. Built to perform. Designed for your team.",
   keywords: [
     "custom team uniforms",
     "custom jerseys",
@@ -38,15 +25,15 @@ export const metadata: Metadata = {
     "team apparel",
   ],
   openGraph: {
-    title: "UltraAthletics — Custom Sportswear Built to Perform",
+    title: "Gearify Pro — Custom Sportswear Built to Perform",
     description:
       "Built to perform. Designed for your team. Premium custom teamwear with real performance DNA.",
     type: "website",
-    siteName: "UltraAthletics",
+    siteName: "Gearify Pro",
   },
   twitter: {
     card: "summary_large_image",
-    title: "UltraAthletics",
+    title: "Gearify Pro",
     description: "Built to perform. Designed for your team.",
   },
 };
@@ -64,10 +51,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${archivo.variable} h-full antialiased`}
+      className="h-full antialiased"
     >
-      <body className="flex min-h-full flex-col overflow-x-clip bg-ink-950 font-sans text-ink-100">
+      <body
+        cz-shortcut-listen="true"
+        suppressHydrationWarning
+        className="flex min-h-full flex-col overflow-x-clip bg-ink-950 font-sans text-ink-100"
+      >
         <ScrollProvider>
+          <AnnouncementBar />
+          <div className="h-px bg-white/10" />
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <Footer />

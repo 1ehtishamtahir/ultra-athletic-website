@@ -64,7 +64,7 @@ export function HowItWorks() {
         <Reveal className="mb-12 md:mb-16">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#5a8a00]">
+              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-volt">
                 How It Works
               </p>
               <h2 className="font-heading text-[clamp(2rem,4vw,3.5rem)] font-semibold uppercase leading-tight tracking-tight text-ink-100">

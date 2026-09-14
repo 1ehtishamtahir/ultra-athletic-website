@@ -25,7 +25,6 @@ const FOOTER_COLS = [
     title: "Company",
     links: [
       { label: "Custom Uniforms", href: "/custom-uniforms" },
-      { label: "Gallery", href: "/gallery" },
       { label: "About", href: "/about" },
       { label: "Contact", href: "/contact" },
       { label: "Request a Quote", href: "/request-a-quote" },
@@ -41,13 +40,13 @@ export function Footer() {
       <div className="mx-auto max-w-[1440px] px-6 pb-10 pt-20 md:px-10">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <Link href="/" className="relative block h-9 w-[180px]" aria-label="UltraAthletics — home">
+            <Link href="/" className="relative block size-28" aria-label="Gearify Pro — home">
               <Image
-                src="/images/logo-2.png"
+                src="/images/gearify-logo-scrolled.png"
                 alt=""
                 fill
-                sizes="180px"
-                className="object-contain object-left"
+                sizes="112px"
+                className="object-contain"
               />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-mist-400">
@@ -90,7 +89,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-ink-700 pt-6 text-xs text-mist-500 md:flex-row">
-          <p>© {new Date().getFullYear()} UltraAthletics. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Gearify Pro. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="#" className="transition-colors hover:text-ink-100">
               Privacy
@@ -115,7 +114,7 @@ export function Footer() {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            UltraAthletics
+            Gearify Pro
           </motion.p>
           {!reduced && (
             <div

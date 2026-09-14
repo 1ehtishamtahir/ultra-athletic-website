@@ -13,13 +13,13 @@ export function QuoteCTA() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(46% 55% at 50% 100%, rgb(198 255 61 / 0.1) 0%, transparent 70%), radial-gradient(30% 40% at 20% 20%, rgb(61 217 255 / 0.05) 0%, transparent 70%)",
+            "radial-gradient(46% 55% at 50% 100%, rgb(227 6 19 / 0.14) 0%, transparent 70%), radial-gradient(30% 40% at 20% 20%, rgb(255 90 99 / 0.06) 0%, transparent 70%)",
         }}
       />
       <div className="grid-bg absolute inset-0 opacity-30 [mask-image:radial-gradient(60%_60%_at_50%_50%,black,transparent)]" />
 
       <Reveal className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-6 text-center">
-        <p className="mb-6 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#5a8a00]">
+        <p className="mb-6 text-[11px] font-semibold uppercase tracking-[0.3em] text-volt">
           Request a Quote
         </p>
 

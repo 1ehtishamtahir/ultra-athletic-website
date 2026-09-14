@@ -18,7 +18,7 @@ type SpotlightCardProps = {
 
 export function SpotlightCard({
   children,
-  color = "#C6FF3D",
+  color = "#E30613",
   className,
   style,
 }: SpotlightCardProps) {

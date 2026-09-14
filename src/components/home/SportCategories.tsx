@@ -47,7 +47,7 @@ export function SportCategories() {
       <div className="mx-auto max-w-[1440px] px-6 md:px-10">
         <RevealStagger className="mb-14 md:mb-20">
           <RevealItem>
-            <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#5a8a00]">
+            <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-volt">
               Shop by Sport
             </p>
             <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">

@@ -59,7 +59,7 @@ export function CustomCursor() {
             label ? "scale-0" : "scale-100"
           }`}
           animate={{
-            backgroundColor: label ? "#C6FF3D" : "#C6FF3D",
+            backgroundColor: "#E30613",
             scale: pressed ? 0.5 : label ? 0 : 1,
           }}
         />

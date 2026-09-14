@@ -6,11 +6,10 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const BANNERS = [
-  { src: "/images/banners/banner-1.webp", alt: "UltraAthletics banner 1" },
-  { src: "/images/banners/banner-2.webp", alt: "UltraAthletics banner 2" },
-  { src: "/images/banners/banner-3.webp", alt: "UltraAthletics banner 3" },
-  { src: "/images/banners/banner-4.webp", alt: "UltraAthletics banner 4" },
-  { src: "/images/banners/banner-5.webp", alt: "UltraAthletics banner 5" },
+  { src: "/images/banners/banner-1.webp", alt: "Gearify Pro custom teamwear banner" },
+  { src: "/images/banners/banner-2.webp", alt: "Gearify Pro soccer teamwear banner" },
+  { src: "/images/banners/banner-3.webp", alt: "Gearify Pro cricket performance banner" },
+  { src: "/images/banners/banner-4.webp", alt: "Gearify Pro all-sports equipment banner" },
 ];
 
 const INTERVAL = 6000;

@@ -13,7 +13,7 @@ const FEATURES = [
       <svg viewBox="0 0 24 24" fill="none" className="size-7" aria-hidden>
         <motion.path
           d="M4 17 L8 9 L12 14 L15 7 L20 17 Z"
-          stroke="#5a8a00"
+          stroke="#e30613"
           strokeWidth="1.6"
           strokeLinejoin="round"
           initial={{ pathLength: 0 }}
@@ -41,7 +41,7 @@ const FEATURES = [
       <svg viewBox="0 0 24 24" fill="none" className="size-7" aria-hidden>
         <motion.path
           d="M12 3 L20 7 V13 C20 18 16.6 20.6 12 21.6 C7.4 20.6 4 18 4 13 V7 Z"
-          stroke="#5a8a00"
+          stroke="#e30613"
           strokeWidth="1.6"
           strokeLinejoin="round"
           initial={{ pathLength: 0 }}
@@ -51,7 +51,7 @@ const FEATURES = [
         />
         <motion.path
           d="M9 12 L11.2 14.4 L15.4 9.4"
-          stroke="#5a8a00"
+          stroke="#e30613"
           strokeWidth="1.6"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -70,7 +70,7 @@ const FEATURES = [
       <svg viewBox="0 0 24 24" fill="none" className="size-7" aria-hidden>
         <motion.path
           d="M4 18 L9 10 L13 14 L17 7 L20 11"
-          stroke="#5a8a00"
+          stroke="#e30613"
           strokeWidth="1.6"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -93,7 +93,7 @@ const FEATURES = [
           cx="17"
           cy="7"
           r="2"
-          fill="#5a8a00"
+          fill="#e30613"
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -104,13 +104,13 @@ const FEATURES = [
   },
 ];
 
-export function WhyUltraAthletics() {
+export function WhyGearifyPro() {
   return (
     <section className="relative overflow-hidden bg-ink-950 py-24 md:py-36">
       <div className="relative mx-auto max-w-[1440px] px-6 md:px-10">
         <Reveal className="mb-14 max-w-2xl md:mb-20">
-          <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#5a8a00]">
-            Why UltraAthletics
+          <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-volt">
+            Why Gearify Pro
           </p>
           <h2 className="font-heading text-[clamp(2rem,4vw,3.5rem)] font-semibold uppercase leading-[1.05] tracking-tight text-ink-100">
             Built Like Equipment,
@@ -138,7 +138,7 @@ export function WhyUltraAthletics() {
                       aria-hidden
                       className="mt-2 size-2 rounded-full"
                       style={{
-                        backgroundColor: ["#C6FF3D", "#3DD9FF", "#FF9B3D", "#7A8CFF"][i],
+                        backgroundColor: ["#E30613", "#FF5A63", "#8F1018", "#7A2028"][i],
                       }}
                     />
                   </div>
@@ -157,7 +157,7 @@ export function WhyUltraAthletics() {
               <div className="group relative h-full overflow-hidden rounded-3xl border border-white/[0.06] bg-[#131316] p-8 transition-all duration-500 hover:border-white/[0.12]">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent" />
                 <div className="relative">
-                  <div className="mb-6 grid size-14 place-items-center rounded-2xl border border-white/[0.08] bg-white/[0.04] transition-colors duration-500 group-hover:border-[#5a8a00]/30">
+                  <div className="mb-6 grid size-14 place-items-center rounded-2xl border border-white/[0.08] bg-white/[0.04] transition-colors duration-500 group-hover:border-volt/30">
                     {feature.icon}
                   </div>
                   <h3 className="font-heading text-xl font-bold uppercase tracking-tight text-white">

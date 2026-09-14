@@ -934,12 +934,11 @@ export type CustomColor = {
 };
 
 export const CUSTOM_COLORS: CustomColor[] = [
-  { name: "Volt", hex: "#C6FF3D" },
-  { name: "Frost", hex: "#3DD9FF" },
-  { name: "Ignite", hex: "#FF4D2E" },
-  { name: "Amber", hex: "#FF9B3D" },
-  { name: "Violet", hex: "#7A8CFF" },
-  { name: "Pitch Black", hex: "#0A0A0B" },
+  { name: "Signal Red", hex: "#E30613" },
+  { name: "Highlight Red", hex: "#FF5A63" },
+  { name: "Deep Red", hex: "#B8000A" },
+  { name: "Team Black", hex: "#0A0A0B" },
+  { name: "Charcoal", hex: "#24242A" },
 ];
 
 export const HOW_IT_WORKS = [
@@ -972,33 +971,10 @@ export const WHY_STATS = [
   { value: 40, suffix: "+", label: "Countries shipped" },
 ];
 
-export type GalleryItem = {
-  id: number;
-  sport: string;
-  height: number;
-  label: string;
-};
-
-export const GALLERY_ITEMS: GalleryItem[] = [
-  { id: 1, sport: "Soccer", height: 460, label: "Night league — floodlit turf" },
-  { id: 2, sport: "Cricket", height: 340, label: "Test match whites, reimagined" },
-  { id: 3, sport: "Basketball", height: 420, label: "Hardwood warmup" },
-  { id: 4, sport: "Soccer", height: 320, label: "406 detail — crest embroidery" },
-  { id: 5, sport: "Ice Hockey", height: 480, label: "Rink side at dawn" },
-  { id: 6, sport: "Baseball", height: 360, label: "Ninth-inning walk-off" },
-  { id: 7, sport: "Cricket", height: 430, label: "Tapework on the seam" },
-  { id: 8, sport: "Basketball", height: 300, label: "Blackout edition" },
-  { id: 9, sport: "Ice Hockey", height: 400, label: "Glass-to-glass" },
-  { id: 10, sport: "Baseball", height: 340, label: "Spring training" },
-  { id: 11, sport: "Soccer", height: 300, label: "Kickoff" },
-  { id: 12, sport: "Cricket", height: 380, label: "Boundary check" },
-];
-
 export const NAV_LINKS = [
   { label: "Shop", href: "/shop" },
   { label: "Sports", href: "/sports" },
   { label: "Custom Uniforms", href: "/custom-uniforms" },
-  { label: "Gallery", href: "/gallery" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];

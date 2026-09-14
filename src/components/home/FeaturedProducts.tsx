@@ -57,7 +57,7 @@ export function FeaturedProducts() {
       <div className="mx-auto max-w-[1440px] px-6 md:px-10">
         <RevealStagger className="mb-14 flex flex-col gap-5 md:mb-20 md:flex-row md:items-end md:justify-between">
           <RevealItem>
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#5a8a00]">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-volt">
               Featured Products
             </p>
             <h2 className="font-heading text-[clamp(2rem,4vw,3.5rem)] font-semibold uppercase leading-tight tracking-tight text-ink-100">

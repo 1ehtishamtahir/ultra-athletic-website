@@ -21,17 +21,17 @@ function Wordmark({ onClick, scrolled }: { onClick?: () => void; scrolled?: bool
     <Link
       href="/"
       onClick={onClick}
-      className="relative block h-8 shrink-0 sm:h-9"
-      aria-label="UltraAthletics — home"
+      className="relative block size-14 shrink-0 sm:size-16"
+      aria-label="Gearify Pro — home"
     >
       <Image
-        src={scrolled ? "/images/logo-2.png" : "/images/logo.png"}
+        src={scrolled ? "/images/gearify-logo-scrolled.png" : "/images/gearify-logo-red.png"}
         alt=""
         width={2469}
         height={947}
         priority
-        sizes="180px"
-        className="h-full w-auto object-contain object-left"
+        sizes="64px"
+        className="h-full w-full object-contain brightness-0 invert"
       />
     </Link>
   );
@@ -156,7 +156,7 @@ export function SiteHeader() {
                 size="sm"
                 magnetic={false}
                 className={cn(
-                  "!bg-volt !text-black !border-volt hover:!bg-[#d4ff4d] transition-all duration-500",
+                  "!bg-volt !text-white !border-volt hover:!bg-[#ff3945] transition-all duration-500",
                   scrolled
                     ? "opacity-100"
                     : "md:opacity-90"
@@ -173,7 +173,7 @@ export function SiteHeader() {
             >
               <span className="relative block h-3 w-5">
                 <span className="absolute left-0 top-0 h-[1.5px] w-full rounded-full bg-white transition-transform duration-300" />
-                <span className="absolute left-0 top-[5px] h-[1.5px] w-3/4 rounded-full bg-volt transition-all duration-300" />
+              <span className="absolute left-0 top-[5px] h-[1.5px] w-3/4 rounded-full bg-volt transition-all duration-300" />
                 <span className="absolute bottom-0 left-0 h-[1.5px] w-full rounded-full bg-white transition-transform duration-300" />
               </span>
             </button>
@@ -208,7 +208,7 @@ function MegaMenu({
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 10, scale: 0.98 }}
       transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
-      className="absolute left-1/2 top-[calc(100%+10px)] w-[640px] -translate-x-1/2 overflow-hidden rounded-3xl border border-[#e0e0e0] bg-white/95 shadow-[0_40px_120px_rgba(0,0,0,0.6)] backdrop-blur-2xl"
+      className="absolute left-1/2 top-[calc(100%+10px)] w-[640px] -translate-x-1/2 overflow-hidden rounded-3xl border border-white/[0.12] bg-[#101012]/95 shadow-[0_40px_120px_rgba(0,0,0,0.72)] backdrop-blur-2xl"
     >
       <div className="pointer-events-auto p-3">
         {type === "sports" ? (
@@ -223,14 +223,14 @@ function MegaMenu({
                 <Link
                   href={sport.href}
                   onClick={onNavigate}
-                  className="group/sport flex flex-col gap-3 rounded-2xl border border-transparent p-4 transition-colors duration-300 hover:border-[#e0e0e0] hover:bg-[#f5f5f5]/60"
+                  className="group/sport flex flex-col gap-3 rounded-2xl border border-transparent p-4 transition-colors duration-300 hover:border-white/[0.12] hover:bg-white/[0.06]"
                 >
                   <span
                     className="size-2.5 rounded-full transition-transform duration-300 group-hover/sport:scale-125"
                     style={{ backgroundColor: sport.color }}
                   />
                   <span>
-                    <span className="block font-sans text-sm font-semibold uppercase tracking-wide text-ink-100">
+                    <span className="block font-sans text-sm font-semibold uppercase tracking-wide text-white">
                       {sport.name}
                     </span>
                     <span className="mt-1 block text-[10px] uppercase tracking-[0.16em] text-mist-500">
@@ -253,10 +253,10 @@ function MegaMenu({
                 <Link
                   href={product.href}
                   onClick={onNavigate}
-                  className="group/shop flex items-center justify-between rounded-2xl border border-transparent px-4 py-3.5 transition-colors duration-300 hover:border-[#e0e0e0] hover:bg-[#f5f5f5]/60"
+                  className="group/shop flex items-center justify-between rounded-2xl border border-transparent px-4 py-3.5 transition-colors duration-300 hover:border-white/[0.12] hover:bg-white/[0.06]"
                 >
                   <span>
-                    <span className="block font-sans text-sm font-semibold uppercase tracking-wide text-ink-100">
+                    <span className="block font-sans text-sm font-semibold uppercase tracking-wide text-white">
                       {product.name}
                     </span>
                     <span className="mt-0.5 block text-[10px] uppercase tracking-[0.16em] text-mist-500">
@@ -271,14 +271,14 @@ function MegaMenu({
         )}
       </div>
 
-      <div className="border-t border-[#e0e0e0] bg-[#f5f5f5]/60 p-4">
+      <div className="border-t border-white/[0.1] bg-black/20 p-4">
         <Link
           href="/custom-uniforms"
           onClick={onNavigate}
-          className="group flex items-center justify-between rounded-2xl bg-gradient-to-r from-volt/10 to-transparent px-5 py-4"
+          className="group flex items-center justify-between rounded-2xl border border-volt/20 bg-gradient-to-r from-volt/[0.16] via-volt/[0.05] to-transparent px-5 py-4"
         >
           <div>
-            <p className="font-sans text-base font-semibold uppercase tracking-wide text-ink-100">
+            <p className="font-sans text-base font-semibold uppercase tracking-wide text-white">
               Custom Team Uniforms
             </p>
             <p className="mt-0.5 text-[11px] uppercase tracking-[0.18em] text-mist-400">

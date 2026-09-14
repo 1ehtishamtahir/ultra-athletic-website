@@ -59,14 +59,14 @@ export function Hero() {
         className="absolute inset-0"
       >
         <Image
-          src="/images/hero.webp"
+          src="/images/gearify-hero-v2.png"
           alt=""
           fill
           priority
           sizes="100vw"
           placeholder="blur"
           blurDataURL={HERO_BLUR}
-          className="object-cover object-[60%_40%]"
+          className="object-cover object-[70%_center] md:object-[62%_center]"
         />
       </motion.div>
 
@@ -89,7 +89,7 @@ export function Hero() {
             className="h-full w-full rounded-full"
             style={{
               background:
-                "radial-gradient(circle, rgb(198 255 61 / 0.08) 0%, transparent 70%)",
+                "radial-gradient(circle, rgb(227 6 19 / 0.14) 0%, transparent 70%)",
             }}
           />
         </motion.div>
@@ -125,7 +125,7 @@ export function Hero() {
             as="span"
             text="DESIGNED FOR YOUR TEAM."
             delay={0.5}
-            charClassName="text-gradient-volt"
+            charClassName="text-[#e30613]"
             className="mt-2 block font-display text-[clamp(2.9rem,8vw,7rem)] font-bold leading-[0.95] tracking-tight"
           />
 
